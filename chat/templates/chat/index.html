@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Chat</title>
+</head>
+<body>
+    <h1>Chats</h1>
+    <ul>
+        {% for chat in user.chats.all %}
+        <li><a href="{% url 'chat_room' chat.id %}">Chat {{ chat.id }}</a></li>
+        {% endfor %}
+    </ul>
+    
+    <script src="{% static 'chat/js/script.js' %}"></script>
+</body>
+</html>
